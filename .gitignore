@@ -3,3 +3,7 @@
 node_modules/
 .DS_Store
 coverage/
+demo/profile*/
+demo/edge*/
+demo/test*.png
+demo/panta-signal-lens-demo.mp4

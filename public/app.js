@@ -104,6 +104,10 @@ function render() {
     card.addEventListener("click", open);
     card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") open(); });
   });
+  if (!state.autoOpened && new URLSearchParams(location.search).get("open") === "top" && items[0]) {
+    state.autoOpened = true;
+    openDetail(items[0].marketId);
+  }
 }
 
 async function openDetail(id) {

@@ -1,0 +1,13 @@
+Prediction markets can contain useful information, but a long catalog still leaves researchers, traders, and newsrooms asking where to look first.
+
+Panta Signal Lens turns the Panta market catalog into an explainable intelligence feed. It ranks every market with a transparent score built from conviction, liquidity, and market phase, then surfaces the strongest signal, the most liquid market, the closest call, and total tracked volume.
+
+The public judge demo is available with clearly labeled sample data. Search, category, and phase filters recalculate the entire view instantly, so a user can narrow attention without losing context.
+
+Under the hood, the same interface connects to the live Panta API through a server-side key. This is a genuine live response from Panta's test environment, including its current market catalog and category taxonomy.
+
+Opening a market combines the detail and recent-trades endpoints. Signal Lens summarizes current probability, volume, and directional YES versus NO flow while preserving the underlying trade evidence.
+
+The integration uses Panta's markets, categories, market detail, and trades routes. Credentials stay server-side, the source is public, and the product visibly attributes Panta wherever its data appears.
+
+Panta Signal Lens is a working foundation for faster, evidence-based market research, powered by Panta.
