@@ -59,3 +59,7 @@ The project uses Node's built-in test runner and has no runtime dependencies.
 Built for the Panta API Sidetrack at Colosseum Crypto World's Fair 2026.
 
 Powered by Panta.
+
+## Public demo
+
+The GitHub Pages build uses the same clearly labeled demo fixture so reviewers can explore the interface without receiving an API credential. Run the Node server with `PANTA_API_KEY` to switch the full experience to live Panta data.

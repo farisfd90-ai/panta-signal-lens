@@ -1,0 +1,76 @@
+{
+  "categories": ["crypto", "finance", "sports", "world"],
+  "items": [
+    {
+      "marketId": "demo-sol-300",
+      "title": "Will SOL trade above $300 before year end?",
+      "description": "Tracks whether SOL reaches the stated level before the market expiry.",
+      "category": "crypto",
+      "phase": "secondary",
+      "yesPrice": "0.68",
+      "noPrice": "0.32",
+      "volumeUsdc": "18420.50",
+      "totalVolumeUsdc": "24115.75",
+      "createdByPartner": true,
+      "endTime": 1798675200
+    },
+    {
+      "marketId": "demo-rate-cut",
+      "title": "Will the next central-bank decision cut rates?",
+      "description": "A macro signal sourced from prediction-market pricing.",
+      "category": "finance",
+      "phase": "secondary",
+      "yesPrice": "0.43",
+      "noPrice": "0.57",
+      "volumeUsdc": "7300.20",
+      "totalVolumeUsdc": "11504.20",
+      "createdByPartner": false,
+      "endTime": 1793404800
+    },
+    {
+      "marketId": "demo-stablecoin",
+      "title": "Will stablecoin supply set a new high this quarter?",
+      "description": "Measures market expectations for stablecoin expansion.",
+      "category": "crypto",
+      "phase": "secondary",
+      "yesPrice": "0.79",
+      "noPrice": "0.21",
+      "volumeUsdc": "39200.10",
+      "totalVolumeUsdc": "44192.85",
+      "createdByPartner": true,
+      "endTime": 1790812800
+    },
+    {
+      "marketId": "demo-final",
+      "title": "Will the championship final go to extra time?",
+      "description": "Live-event market showing low-conviction pricing.",
+      "category": "sports",
+      "phase": "primary",
+      "primaryYesPrice": "0.51",
+      "primaryNoPrice": "0.49",
+      "volumeUsdc": "930.00",
+      "totalVolumeUsdc": "930.00",
+      "createdByPartner": false,
+      "endTime": 1788134400
+    }
+  ],
+  "trades": {
+    "demo-sol-300": [
+      { "signature": "5pantaA", "side": "yes", "amountUsdc": "850", "blockTime": 1789947600 },
+      { "signature": "5pantaB", "side": "yes", "amountUsdc": "430", "blockTime": 1789946400 },
+      { "signature": "5pantaC", "side": "no", "amountUsdc": "190", "blockTime": 1789945200 }
+    ],
+    "demo-rate-cut": [
+      { "signature": "5pantaD", "side": "no", "amountUsdc": "300", "blockTime": 1789944400 },
+      { "signature": "5pantaE", "side": "yes", "amountUsdc": "220", "blockTime": 1789943200 }
+    ],
+    "demo-stablecoin": [
+      { "signature": "5pantaF", "side": "yes", "amountUsdc": "1200", "blockTime": 1789942000 },
+      { "signature": "5pantaG", "side": "yes", "amountUsdc": "990", "blockTime": 1789940800 },
+      { "signature": "5pantaH", "side": "no", "amountUsdc": "110", "blockTime": 1789939600 }
+    ],
+    "demo-final": [
+      { "signature": "5pantaI", "side": "yes", "amountUsdc": "45", "blockTime": 1789938400 }
+    ]
+  }
+}

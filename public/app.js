@@ -1,4 +1,4 @@
-const state = { markets: [], source: "demo", query: "", category: "", phase: "" };
+const state = { markets: [], source: "demo", query: "", category: "", phase: "", demoBundle: null };
 const $ = (id) => document.getElementById(id);
 
 function number(value) { const n = Number(value); return Number.isFinite(n) ? n : 0; }
@@ -36,8 +36,18 @@ async function load() {
     updateSource();
     render();
   } catch (error) {
-    $("marketGrid").innerHTML = `<div class="empty"><strong>Could not load signals</strong><p>${escapeHtml(error.message)}</p></div>`;
-    $("resultMeta").textContent = "Data unavailable";
+    try {
+      const demo = await getJson("./demo-markets.json");
+      state.source = "demo";
+      state.demoBundle = demo;
+      state.markets = demo.items || [];
+      $("category").innerHTML = `<option value="">All categories</option>${(demo.categories || []).map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("")}`;
+      updateSource();
+      render();
+    } catch {
+      $("marketGrid").innerHTML = `<div class="empty"><strong>Could not load signals</strong><p>${escapeHtml(error.message)}</p></div>`;
+      $("resultMeta").textContent = "Data unavailable";
+    }
   } finally { $("refresh").disabled = false; }
 }
 
@@ -90,10 +100,19 @@ async function openDetail(id) {
   const dialog = $("detailDialog");
   $("detailContent").innerHTML = `<div class="detail"><p class="eyebrow">Panta market detail</p><h2>Loading evidence…</h2></div>`;
   dialog.showModal();
+  if (state.demoBundle) {
+    const market = state.markets.find(item => item.marketId === id);
+    const rows = state.demoBundle.trades?.[id] || [];
+    return renderDetail(market, rows);
+  }
   const suffix = state.source === "live" ? "" : "?demo=1";
   try {
     const [market, trades] = await Promise.all([getJson(`/api/markets/${encodeURIComponent(id)}${suffix}`), getJson(`/api/markets/${encodeURIComponent(id)}/trades${suffix}`)]);
-    const rows = trades.items || [];
+    renderDetail(market, trades.items || []);
+  } catch (error) { $("detailContent").innerHTML = `<div class="detail"><h2>Detail unavailable</h2><p>${escapeHtml(error.message)}</p></div>`; }
+}
+
+function renderDetail(market, rows) {
     const yesFlow = rows.filter(t => String(t.side || "").toLowerCase() === "yes").reduce((s,t)=>s+number(t.amountUsdc),0);
     const noFlow = rows.filter(t => String(t.side || "").toLowerCase() === "no").reduce((s,t)=>s+number(t.amountUsdc),0);
     const flow = yesFlow + noFlow ? `${Math.round(yesFlow/(yesFlow+noFlow)*100)}% YES flow` : "No recent flow";
@@ -104,7 +123,6 @@ async function openDetail(id) {
       <p class="eyebrow">Recent trades from Panta</p>
       <ul class="trade-list">${rows.length ? rows.slice(0,8).map(t=>`<li><span class="trade-side ${escapeHtml(String(t.side||"").toLowerCase())}">${escapeHtml(String(t.side||"—").toUpperCase())}</span><code>${escapeHtml(clip(t.signature||"trade",18))}</code><strong>${money(number(t.amountUsdc))}</strong></li>`).join("") : "<li>No recent trades returned.</li>"}</ul>
     </div>`;
-  } catch (error) { $("detailContent").innerHTML = `<div class="detail"><h2>Detail unavailable</h2><p>${escapeHtml(error.message)}</p></div>`; }
 }
 
 $("search").addEventListener("input", e => { state.query = e.target.value.trim().toLowerCase(); render(); });
