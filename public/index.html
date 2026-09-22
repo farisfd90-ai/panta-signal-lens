@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Turn Panta prediction markets into ranked, explainable intelligence signals." />
+  <title>Panta Signal Lens</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Panta Signal Lens home">
+      <span class="brand-mark">P</span>
+      <span>Panta Signal Lens</span>
+    </a>
+    <div class="source-pill" id="sourcePill"><span></span> Connecting</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Prediction markets → decision signals</p>
+        <h1>See what the market<br><em>believes next.</em></h1>
+        <p class="lede">A focused intelligence layer for researchers, traders, and newsrooms. Signal Lens ranks Panta markets by conviction, liquidity, activity, and urgency—then shows its work.</p>
+      </div>
+      <div class="hero-stat">
+        <span>Signal snapshot</span>
+        <strong id="marketCount">—</strong>
+        <small>markets analyzed</small>
+        <div class="pulse-line"></div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Market filters">
+      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search markets or themes" /></label>
+      <select id="category" aria-label="Category"><option value="">All categories</option></select>
+      <select id="phase" aria-label="Phase">
+        <option value="">All phases</option>
+        <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
+        <option value="resolved">Resolved</option>
+      </select>
+      <button id="refresh" class="button">Refresh signals</button>
+    </section>
+
+    <section class="summary-grid" aria-label="Signal summary">
+      <article><span>Highest conviction</span><strong id="topConviction">—</strong><small id="topConvictionLabel">Waiting for data</small></article>
+      <article><span>Most liquid</span><strong id="topLiquidity">—</strong><small id="topLiquidityLabel">Waiting for data</small></article>
+      <article><span>Closest call</span><strong id="closestCall">—</strong><small id="closestCallLabel">Waiting for data</small></article>
+      <article><span>Tracked volume</span><strong id="totalVolume">—</strong><small>Across visible markets</small></article>
+    </section>
+
+    <section class="section-head">
+      <div><p class="eyebrow">Ranked feed</p><h2>Market signals</h2></div>
+      <p id="resultMeta">Loading Panta markets…</p>
+    </section>
+
+    <section id="marketGrid" class="market-grid" aria-live="polite"></section>
+
+    <section class="method">
+      <div><p class="eyebrow">Transparent by design</p><h2>How the lens scores</h2></div>
+      <div class="formula">
+        <span>Conviction <b>45%</b></span>
+        <span>Liquidity <b>35%</b></span>
+        <span>Market phase <b>20%</b></span>
+      </div>
+      <p>Every score is computed from Panta market data. Confidence measures distance from a 50/50 price, liquidity uses a logarithmic volume scale, and active secondary markets receive a phase-quality boost. It is an attention-ranking tool, not financial advice.</p>
+    </section>
+  </main>
+
+  <dialog id="detailDialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close">×</button>
+    <div id="detailContent"></div>
+  </dialog>
+
+  <footer><span>Powered by Panta</span><span>Built for Crypto World’s Fair 2026</span></footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>

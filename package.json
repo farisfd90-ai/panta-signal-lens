@@ -1,0 +1,13 @@
+{
+  "name": "panta-signal-lens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prediction-market intelligence powered by the Panta API",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
