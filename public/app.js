@@ -27,6 +27,16 @@ async function load() {
   $("refresh").disabled = true;
   $("resultMeta").textContent = "Analyzing Panta markets…";
   try {
+    if (location.hostname.endsWith("github.io")) {
+      const demo = await getJson("./demo-markets.json");
+      state.source = "demo";
+      state.demoBundle = demo;
+      state.markets = demo.items || [];
+      $("category").innerHTML = `<option value="">All categories</option>${(demo.categories || []).map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("")}`;
+      updateSource();
+      render();
+      return;
+    }
     const health = await getJson("/api/health");
     state.source = health.mode;
     const suffix = state.source === "live" ? "" : "?demo=1";
