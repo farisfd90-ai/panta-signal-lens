@@ -63,3 +63,6 @@ Powered by Panta.
 ## Public demo
 
 The GitHub Pages build uses the same clearly labeled demo fixture so reviewers can explore the interface without receiving an API credential. Run the Node server with `PANTA_API_KEY` to switch the full experience to live Panta data.
+
+- [Open the public demo](https://farisfd90-ai.github.io/panta-signal-lens/)
+- [Watch the 95-second narrated walkthrough](https://github.com/farisfd90-ai/panta-signal-lens/releases/download/demo-v1/panta-signal-lens-demo.mp4)
