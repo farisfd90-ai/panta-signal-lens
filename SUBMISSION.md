@@ -12,8 +12,12 @@ Panta Signal Lens turns prediction markets into an explainable intelligence feed
 
 - Public product: https://farisfd90-ai.github.io/panta-signal-lens/
 - Source: https://github.com/farisfd90-ai/panta-signal-lens
-- Demo video: https://github.com/farisfd90-ai/panta-signal-lens/releases/download/demo-v1/panta-signal-lens-demo.mp4
-- Demo release: https://github.com/farisfd90-ai/panta-signal-lens/releases/tag/demo-v1
+- Colosseum project: https://colosseum.com/arena/projects/panta-signal-lens
+- Colosseum review: https://colosseum.com/arena/projects/14419/submission
+- Product demo (Unlisted YouTube): https://youtu.be/jn3A6jJH5Y4
+- Founder pitch (Unlisted YouTube): https://youtu.be/6katLzU8nCo
+- Additional narrated walkthrough: https://github.com/farisfd90-ai/panta-signal-lens/releases/download/demo-v1/panta-signal-lens-demo.mp4
+- Panta sidetrack: https://superteam.fun/earn/listing/panta-api-side-track
 
 ## Verification
 
@@ -21,10 +25,9 @@ Panta Signal Lens turns prediction markets into an explainable intelligence feed
 - Live catalog, categories, market detail, and recent trades verified locally.
 - Public demo deployed through GitHub Pages.
 - Node test suite passes.
-- Demo video validated as H.264 1280×720 with AAC audio, duration 1:34.8.
+- Product demo and founder pitch are separate 1280×720 H.264/AAC videos, 69.4 and 58.7 seconds respectively, hosted as Unlisted YouTube videos.
+- The Colosseum review says the project is ready; project details, media and code, and the founder profile are complete.
 
-## Remaining external fields
+## Final submission timing
 
-- Official Colosseum project link
-- Official Colosseum profile link
-- Optional announcement tweet
+Colosseum final submission opens October 6, 2026 at 4:00 AM PDT (7:00 PM Malaysia time). Submit the official Colosseum entry first. Then submit the Panta sidetrack on Superteam Earn and answer its official-submission question truthfully. The Superteam form has been prepared in the browser but cannot be finalized before the Colosseum submission. A thread follow-up is scheduled for the opening window.
